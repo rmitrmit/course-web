@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Frequently Asked Questions</h1>
+        <div class="space-y-4">
+            <details class="bg-white shadow-md rounded-lg overflow-hidden">
+                <summary class="px-6 py-4 cursor-pointer focus:outline-none">
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold text-gray-700">How do I sign up as an instructor?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </div>
+                </summary>
+                <div class="px-6 py-4 bg-gray-50">
+                    <p class="text-gray-700">To sign up as an instructor, go to the Register page and select "Instructor" as your account type.</p>
+                </div>
+            </details>
+            <details class="bg-white shadow-md rounded-lg overflow-hidden">
+                <summary class="px-6 py-4 cursor-pointer focus:outline-none">
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold text-gray-700">How do I enroll in a course?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </div>
+                </summary>
+                <div class="px-6 py-4 bg-gray-50">
+                    <p class="text-gray-700">Browse our course catalog, select a course you're interested in, and click the "Enroll" button on the course page.</p>
+                </div>
+            </details>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="common-elements.js"></script>
+    <script>
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('toggle', (e) => {
+                if (e.target.open) {
+                    const icon = e.target.querySelector('i');
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    const icon = e.target.querySelector('i');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

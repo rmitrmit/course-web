@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Contact Us</h1>
+        <form id="contact-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="contact-purpose">
+                    Contact Purpose:
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact-purpose" name="contact-purpose" required>
+                    <option value="">Select a purpose</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Name:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="name" name="name" required minlength="3">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    Email:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" id="email" name="email" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                    Phone (optional):
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="tel" id="phone" name="phone" minlength="9" maxlength="11">
+            </div>
+
+            <fieldset class="mb-4">
+                <legend class="block text-gray-700 text-sm font-bold mb-2">Preferred Contact Method:</legend>
+                <div class="flex items-center mb-2">
+                    <input class="mr-2 leading-tight" type="radio" id="contact-email" name="contact-method" value="email" required>
+                    <label class="text-sm" for="contact-email">Email</label>
+                </div>
+                <div class="flex items-center">
+                    <input class="mr-2 leading-tight" type="radio" id="contact-phone" name="contact-method" value="phone">
+                    <label class="text-sm" for="contact-phone">Phone</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend class="block text-gray-700 text-sm font-bold mb-2">Contact Days:</legend>
+                <div class="flex flex-wrap">
+                    <div class="w-1/2 mb-2">
+                        <input class="mr-2 leading-tight" type="checkbox" id="monday" name="contact-days" value="monday">
+                        <label class="text-sm" for="monday">Monday</label>
+                    </div>
+                    <!-- Repeat for other days of the week -->
+                </div>
+            </fieldset>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                    Message:
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32" id="message" name="message" required minlength="50" maxlength="500"></textarea>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" id="clear-form">
+                    Clear
+                </button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Send
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="common-elements.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

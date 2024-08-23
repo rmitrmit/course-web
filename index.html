@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+
+    <!-- Hero Section -->
+    <section class="bg-purple-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold">Learn on your schedule</h1>
+            <p class="mt-4 text-lg">Study any topic, anytime. Explore thousands of courses taught by expert instructors.</p>
+            <a href="browse-courses.html" class="mt-6 inline-block bg-white text-purple-600 font-semibold py-3 px-6 rounded-full">Get Started</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Course Categories -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Explore Our Top Categories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="browse-courses.html?category=Business+Management" class="block bg-white p-6 shadow-md text-center rounded-lg hover:bg-gray-50">
+                        <img src="bizness.avif" alt="Business Management category" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Business Management</h3>
+                        <p class="mt-2 text-gray-600">Enhance your business skills with courses on management, strategy, and more.</p>
+                    </a>
+                    <a href="browse-courses.html?category=Web+Development" class="block bg-white p-6 shadow-md text-center rounded-lg hover:bg-gray-50">
+                        <img src="web_development.jpg" alt="Web Design category" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Web Development</h3>
+                        <p class="mt-2 text-gray-600">Create stunning websites with our courses on web design and development.</p>
+                    </a>
+                    <a href="browse-courses.html?category=Graphic+Design" class="block bg-white p-6 shadow-md text-center rounded-lg hover:bg-gray-50">
+                        <img src="graphic-design.avif" alt="Graphic Design category" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Graphic Design</h3>
+                        <p class="mt-2 text-gray-600">Master the art of visual communication with courses on graphic design.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Featured Courses -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Featured Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-courses">
+                    <!-- Featured courses will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Instructors -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">New Instructors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="new-instructors">
+                    <!-- New instructors will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="script.js"></script>
+    <script src="browse-courses.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.displayFeaturedCourses) {
+                window.displayFeaturedCourses();
+            }
+        });
+    </script>
+    <script src="common-elements.js"></script>
+</body>
+</html>

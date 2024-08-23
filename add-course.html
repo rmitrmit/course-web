@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+
+    <main>
+        <!-- Add Course Form -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Add New Course</h2>
+                <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <form id="add-course-form">
+                        <div class="mb-4">
+                            <label for="course-name" class="block text-gray-700 text-sm font-semibold mb-2">Course Name</label>
+                            <input type="text" id="course-name" name="name" class="w-full border-gray-300 border rounded-lg p-2" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="category" class="block text-gray-700 text-sm font-semibold mb-2">Category</label>
+                            <select id="category" name="category" class="w-full border-gray-300 border rounded-lg p-2" required>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Machine Learning">Machine Learning</option>
+                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Cloud Computing">Cloud Computing</option>
+                                <option value="Cybersecurity">Cybersecurity</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="Business Management">Business Management</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Language Learning">Language Learning</option>
+                                <option value="Music">Music</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Health and Fitness">Health and Fitness</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="price" class="block text-gray-700 text-sm font-semibold mb-2">Price</label>
+                            <input type="number" id="price" name="price" step="0.01" class="w-full border-gray-300 border rounded-lg p-2" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="instructor" class="block text-gray-700 text-sm font-semibold mb-2">Instructor</label>
+                            <input type="text" id="instructor" name="instructor" class="w-full border-gray-300 border rounded-lg p-2" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="image" class="block text-gray-700 text-sm font-semibold mb-2">Image</label>
+                            <input type="file" id="image" name="image" class="w-full border-gray-300 border rounded-lg p-2">
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                Add Course
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="add-course.js"></script>
+    <script src="common-elements.js"></script>
+</body>
+</html>

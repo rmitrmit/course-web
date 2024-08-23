@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail - Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+    <button id="back-button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex items-center">
+        <i class="fas fa-arrow-left mr-2"></i> Back
+    </button>
+    
+    <main class="container mx-auto px-4 py-8">
+        <div id="course-content" class="bg-white rounded-lg shadow-md overflow-hidden">
+            <!-- This div will be populated by JavaScript with course details -->
+        </div>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="common-elements.js"></script>
+    <script src="course-detail.js"></script>
+</body>
+</html>

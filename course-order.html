@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Order - Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header will be injected by common-elements.js -->
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Course Order</h1>
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Course Summary</h2>
+            <div id="course-summary" class="text-gray-600">
+                <!-- This div will be populated by JavaScript with course summary -->
+            </div>
+        </div>
+        <form id="order-form" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Payment Information</h2>
+            <div class="mb-4">
+                <label for="payment-method" class="block text-gray-700 text-sm font-bold mb-2">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Select a payment method</option>
+                    <option value="credit-card">Credit Card (Stripe)</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+            </div>
+
+            <div id="stripe-payment-element" class="hidden mb-4">
+                <!-- Stripe Elements will be inserted here -->
+            </div>
+
+            <div id="paypal-button-container" class="hidden mb-4">
+                <!-- PayPal button will be inserted here -->
+            </div>
+
+            <h2 class="text-xl font-semibold text-gray-700 mb-4 mt-8">Access Options</h2>
+            <div class="mb-4">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="access-duration" value="permanent" required class="form-radio">
+                    <span class="ml-2">Permanent Access</span>
+                </label>
+            </div>
+            <div class="mb-4">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="access-duration" value="7-day" class="form-radio">
+                    <span class="ml-2">7-Day Access</span>
+                </label>
+            </div>
+
+            <div class="mb-8">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" name="certificate" value="yes" class="form-checkbox">
+                    <span class="ml-2">Include Certificate of Completion</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="button" id="cancel-btn" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Cancel
+                </button>
+                <button type="submit" id="order-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Place Order
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer will be injected by common-elements.js -->
+
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+    <script src="common-elements.js"></script>
+    <script src="course-order.js"></script>
+</body>
+</html>
