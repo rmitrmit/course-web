@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error deleting course:', error);
         }
     }
+
+    const toggleDeleteBtn = document.getElementById('toggle-delete-btn');
+    let deleteMode = false;
     
 
     function displayCourses(courses) {
@@ -87,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `).join('');
 
+        updateDeleteButtons();
+
         // Attach event listeners to delete buttons
         document.querySelectorAll('.delete-course').forEach(button => {
             button.addEventListener('click', async function() {
@@ -97,6 +102,37 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    function updateDeleteButtons() {
+        document.querySelectorAll('.delete-course').forEach(button => {
+            if (deleteMode) {
+                button.classList.remove('hidden');
+            } else {
+                button.classList.add('hidden');
+            }
+
+            button.addEventListener('click', async function() {
+                const courseId = this.getAttribute('data-id');
+                await deleteCourse(courseId);
+                // Refresh the course list after deletion
+                fetchCourses().then(courses => displayCourses(courses));
+            });
+        });
+    }
+
+    toggleDeleteBtn.addEventListener('click', function() {
+        deleteMode = !deleteMode;
+        if (deleteMode) {
+            this.textContent = 'Cancel Delete';
+            this.classList.remove('bg-red-500', 'hover:bg-red-700');
+            this.classList.add('bg-gray-500', 'hover:bg-gray-700');
+        } else {
+            this.textContent = 'Delete Courses';
+            this.classList.remove('bg-gray-500', 'hover:bg-gray-700');
+            this.classList.add('bg-red-500', 'hover:bg-red-700');
+        }
+        updateDeleteButtons();
+    });
 
     function displayFeaturedCourses() {
         const featuredCourses = [
