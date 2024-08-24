@@ -24,20 +24,38 @@ document.addEventListener('DOMContentLoaded', function() {
         "Health and Fitness"
     ];
 
+    const mockCourses = [
+        { id: 'mock1', name: "Introduction to React", category: "Web Development", price: 59.99, instructor: "Alice Johnson", image: "https://via.placeholder.com/300x200?text=Intro+to+React" },
+        { id: 'mock2', name: "Advanced Machine Learning", category: "Machine Learning", price: 89.99, instructor: "Bob Smith", image: "https://via.placeholder.com/300x200?text=Advanced+ML" },
+        { id: 'mock3', name: "Digital Marketing Mastery", category: "Digital Marketing", price: 69.99, instructor: "Carol White", image: "https://via.placeholder.com/300x200?text=Digital+Marketing" },
+        { id: 'mock4', name: "iOS App Development", category: "Mobile App Development", price: 79.99, instructor: "David Brown", image: "https://via.placeholder.com/300x200?text=iOS+Development" },
+        { id: 'mock5', name: "Cybersecurity Fundamentals", category: "Cybersecurity", price: 74.99, instructor: "Eva Green", image: "https://via.placeholder.com/300x200?text=Cybersecurity" }
+    ];
+
     async function fetchCourses() {
         try {
             const response = await fetch('http://localhost:3000/api/courses');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return await response.json();
+            const fetchedCourses = await response.json();
+            
+            // Combine mock courses with fetched courses
+            return [...mockCourses, ...fetchedCourses];
         } catch (error) {
             console.error('Error fetching courses:', error);
-            return [];
+            // If there's an error fetching courses, return only the mock courses
+            return mockCourses;
         }
     }
 
     async function deleteCourse(courseId) {
+        // Prevent deletion of mock courses
+        if (courseId.startsWith('mock')) {
+            console.log('Cannot delete mock courses');
+            return;
+        }
+    
         try {
             const response = await fetch(`http://localhost:3000/api/delete-course/${courseId}`, {
                 method: 'DELETE'
