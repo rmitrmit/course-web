@@ -1,29 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Inject header
+
     document.body.insertAdjacentHTML('afterbegin', `
-        <header class="bg-white shadow-md">
-            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html" class="text-2xl font-bold text-purple-600">Online Learning Platform</a>
-                    <nav class="ml-6 space-x-4 hidden md:flex">
-                        <a href="browse-courses.html" class="text-gray-700 hover:text-gray-900">Browse Courses</a>
-                        <a href="about.html" class="text-gray-700 hover:text-gray-900">About Us</a>
-                        <a href="pricing.html" class="text-gray-700 hover:text-gray-900">Pricing</a>
-                        <a href="add-course.html" class="text-gray-700 hover:text-gray-900">Add Course</a> <!-- Added link -->
-                    </nav>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <input type="text" placeholder="Search for courses" class="border rounded-full px-4 py-2 hidden md:block">
-                    <a href="my-account.html" class="text-gray-700 hover:text-gray-900 hidden md:block">My Account</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-gray-900 hidden md:block">Contact</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900 hidden md:block"><i class="fas fa-shopping-cart"></i></a>
-                    <button class="md:hidden text-gray-700 hover:text-gray-900">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+                <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="hidden md:flex md:items-center w-full md:w-auto mt-4 md:mt-0">
+                    <a href="browse-courses.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Browse Courses</a>
+                    <a href="about.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">About Us</a>
+                    <a href="pricing.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Pricing</a>
+                    <a href="add-course.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Add Course</a>
+                    <a href="my-account.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">My Account</a>
+                    <a href="contact.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Contact</a>
+                    <a href="#" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </nav>
             </div>
         </header>
     `);
+
+    const header = document.querySelector('header');
+    document.body.style.paddingTop = header.offsetHeight + 'px';
 
     // Inject footer
     document.body.insertAdjacentHTML('beforeend', `
