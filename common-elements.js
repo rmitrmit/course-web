@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inject header
 
     document.body.insertAdjacentHTML('afterbegin', `
-        <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+         <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
             <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-purple-600">Online Learning Platform</a>
+                    <a href="index.html" class="flex items-center">
+                     <img src="logo.jpg" alt="Online Learning Platform Logo" class="h-10 mr-3">
+                     <span class="text-2xl font-bold text-purple-600 md:hidden">OLP</span>
+                   </a>
                 </div>
                 <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
                     <i class="fas fa-bars"></i>
@@ -26,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     `);
 
     const header = document.querySelector('header');
-    document.body.style.paddingTop = header.offsetHeight + 'px';
+
+
+    
 
     // Inject footer
     document.body.insertAdjacentHTML('beforeend', `
@@ -81,3 +86,4 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('hidden');
     });
 });
+
