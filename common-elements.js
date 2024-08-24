@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center">
                      <img src="logo.jpg" alt="Online Learning Platform Logo" class="h-10 mr-3">
-                     <span class="text-2xl font-bold text-purple-600 md:hidden">OLP</span>
                    </a>
                 </div>
                 <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">

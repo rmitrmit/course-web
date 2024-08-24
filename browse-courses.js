@@ -56,14 +56,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
     
-        try {
-            const response = await fetch(`http://localhost:3000/api/delete-course/${courseId}`, {
-                method: 'DELETE'
-            });
-            if (!response.ok) throw new Error('Network response was not ok');
-            return await response.json();
-        } catch (error) {
-            console.error('Error deleting course:', error);
+        // Allow deletion of temporary (newly added) courses or courses with server-generated IDs
+        if (courseId.startsWith('temp_') || !isNaN(courseId)) {
+            try {
+                const response = await fetch(`http://localhost:3000/api/delete-course/${courseId}`, {
+                    method: 'DELETE'
+                });
+                if (!response.ok) throw new Error('Network response was not ok');
+                const result = await response.json();
+                console.log('Course deleted successfully:', courseId);
+                return result;
+            } catch (error) {
+                console.error('Error deleting course:', error);
+                throw error; // Re-throw the error so it can be handled by the calling function
+            }
+        } else {
+            console.log('Cannot delete course with unknown ID format:', courseId);
+            throw new Error('Invalid course ID format');
         }
     }
 

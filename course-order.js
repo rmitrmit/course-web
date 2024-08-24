@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancel-btn');
     const paymentMethodSelect = document.getElementById('payment-method');
     const stripePaymentElement = document.getElementById('stripe-payment-element');
-    const paypalButtonContainer = document.getElementById('paypal-button-container');
+    const paypalLogoContainer = document.getElementById('paypal-logo-container');
 
     // Get the course ID from the URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -29,15 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
     paymentMethodSelect.addEventListener('change', function() {
         if (this.value === 'credit-card') {
             stripePaymentElement.classList.remove('hidden');
-            paypalButtonContainer.classList.add('hidden');
+            paypalLogoContainer.classList.add('hidden');
             cardElement.mount('#stripe-payment-element');
         } else if (this.value === 'paypal') {
             stripePaymentElement.classList.add('hidden');
-            paypalButtonContainer.classList.remove('hidden');
-            initPayPalButton();
+            paypalLogoContainer.classList.remove('hidden');
         } else {
             stripePaymentElement.classList.add('hidden');
-            paypalButtonContainer.classList.add('hidden');
+            paypalLogoContainer.classList.add('hidden');
         }
     });
 
@@ -58,8 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'thank-you.html';
             }
         } else if (paymentMethod === 'paypal') {
-            // PayPal payment is handled by the PayPal button
-            alert('Please use the PayPal button to complete your payment.');
+            // Simulate PayPal payment for prototype
+            alert('PayPal payment simulation: Payment successful!');
+            window.location.href = 'thank-you.html';
         } else {
             alert('Please select a payment method.');
         }
@@ -69,28 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cancelBtn.addEventListener('click', function() {
         window.location.href = 'course-detail.html?id=' + courseId;
     });
-
-    // Initialize PayPal button
-    function initPayPalButton() {
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: course.price.toFixed(2)
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    console.log('PayPal transaction completed by ' + details.payer.name.given_name);
-                    alert('Payment successful!');
-                    window.location.href = 'thank-you.html';
-                });
-            }
-        }).render('#paypal-button-container');
-    }
 });
 
 function getCourseDetails(courseId) {
