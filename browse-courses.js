@@ -134,30 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDeleteButtons();
     });
 
-    function displayFeaturedCourses() {
-        const featuredCourses = [
-            { id: 1, name: "JavaScript Fundamentals", category: "Web Development", price: 49.99, instructor: "John Doe", image: "https://via.placeholder.com/300x200?text=JavaScript+Fundamentals" },
-            { id: 2, name: "Python for Data Science", category: "Data Science", price: 79.99, instructor: "Jane Smith", image: "https://via.placeholder.com/300x200?text=Python+for+Data+Science" },
-            { id: 3, name: "iOS App Development with Swift", category: "Mobile App Development", price: 89.99, instructor: "Mike Johnson", image: "https://via.placeholder.com/300x200?text=iOS+App+Development" }
-        ];
-
-        const featuredCoursesContainer = document.getElementById('featured-courses');
-        featuredCoursesContainer.innerHTML = featuredCourses.map(course => `
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="${course.image || 'https://via.placeholder.com/300x200?text=No+Image'}" alt="${course.name}" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${course.name}</h3>
-                    <p class="text-gray-600 mb-2">Instructor: ${course.instructor}</p>
-                    <p class="text-2xl font-bold text-blue-600 mb-4">$${course.price.toFixed(2)}</p>
-                    <a href="course-detail.html?id=${course.id}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block">
-                        View Course
-                    </a>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    window.displayFeaturedCourses = displayFeaturedCourses;
+    
 
     function displayAlphabetOptions() {
         const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -235,3 +212,28 @@ document.addEventListener('DOMContentLoaded', function() {
     applyCategoryFilter();
     browseOptions.classList.add('hidden');
 });
+
+function displayFeaturedCourses() {
+    const featuredCourses = [
+        { id: 1, name: "JavaScript Fundamentals", category: "Web Development", price: 49.99, instructor: "John Doe", image: "https://via.placeholder.com/300x200?text=JavaScript+Fundamentals" },
+        { id: 2, name: "Python for Data Science", category: "Data Science", price: 79.99, instructor: "Jane Smith", image: "https://via.placeholder.com/300x200?text=Python+for+Data+Science" },
+        { id: 3, name: "iOS App Development with Swift", category: "Mobile App Development", price: 89.99, instructor: "Mike Johnson", image: "https://via.placeholder.com/300x200?text=iOS+App+Development" }
+    ];
+
+    const featuredCoursesContainer = document.getElementById('featured-courses');
+    featuredCoursesContainer.innerHTML = featuredCourses.map(course => `
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="${course.image || 'https://via.placeholder.com/300x200?text=No+Image'}" alt="${course.name}" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">${course.name}</h3>
+                <p class="text-gray-600 mb-2">Instructor: ${course.instructor}</p>
+                <p class="text-2xl font-bold text-blue-600 mb-4">$${course.price.toFixed(2)}</p>
+                <a href="course-detail.html?id=${course.id}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block">
+                    View Course
+                </a>
+            </div>
+        </div>
+    `).join('');
+}
+
+window.displayFeaturedCourses = displayFeaturedCourses;
