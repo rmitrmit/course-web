@@ -66,11 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div>
                         <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
                         <div class="space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        </div>
+                        <a href="https://www.facebook.com" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>                    
                     </div>
                 </div>
             </div>
