@@ -6,7 +6,6 @@
     <title>Online Learning Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100">
@@ -23,7 +22,7 @@
 
     <main>
         <!-- Course Categories -->
-        <section class="py-16 bg-gray-100">
+        <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Explore Our Top Categories</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -46,9 +45,8 @@
             </div>
         </section>
         
-
         <!-- Featured Courses -->
-        <section class="py-16 bg-white">
+        <section class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Featured Courses</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-courses">
@@ -57,20 +55,58 @@
             </div>
         </section>
 
-        <!-- New Instructors -->
+        <!-- Featured Instructors -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Featured Instructors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="featured-instructor">
+                    <!-- Featured instructors will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Courses -->
         <section class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">New Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="new-course">
+                    <!-- New courses will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Instructors -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">New Instructors</h2>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="new-instructors">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="new-instructor">
                     <!-- New instructors will be populated by JavaScript -->
                 </div>
             </div>
         </section>
+
+        <!-- Modals for viewing more information -->
+        <div id="instructor-modal" class="modal fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+                <div class="modal-content">
+                    <!-- Instructor details will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="course-modal" class="modal fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+                <div class="modal-content">
+                    <!-- Course details will be injected here -->
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer will be injected by common-elements.js -->
 
     <script src="script.js"></script>
+    <script src="displayInstructors.js"></script>
     <script src="browse-courses.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
