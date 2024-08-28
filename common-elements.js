@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="font-semibold text-lg mb-4">Support</h4>
                         <ul>
                             <li><a href="faqs.html" class="text-gray-400 hover:text-white">FAQs</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Help Center</a></li>
                             <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
                             <li><a href="terms-of-service.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
                         </ul>
