@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="pricing.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Pricing</a>
                     <a href="add-course.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Add Course</a>
                     <a href="my-account.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">My Account</a>
+                    <a href="faqs.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">FAQs</a>
                     <a href="contact.html" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900 mr-4">Contact</a>
                     <a href="#" class="block mt-4 md:inline-block md:mt-0 text-gray-700 hover:text-gray-900">
                         <i class="fas fa-shopping-cart"></i>
